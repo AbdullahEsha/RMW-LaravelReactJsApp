@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from 'react-router-dom';
-import "./style.css";
+
 
 const UseState = () => {
   const intialData = 0;

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from 'react-router-dom';
-import "./style.css";
+
 
 const UseEffect = () => {
   const intialData = 0;
