@@ -5,6 +5,7 @@ import UseEffect from './Component/Hooks/useEffect';
 import UseReducer from './Component/Hooks/useReducer';
 import Index from './views/index';
 import Home from './Component/Hooks/home';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
