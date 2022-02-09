@@ -1,19 +1,15 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom';
 import "./../assets/css/main.css";
+import MainNav from './../Component/nav.js';
 
 const Index = () => {
     const history = useHistory();
     return (
         <>
-            <h1>Home</h1>
-            <div class="button2" onClick={() => history.push('/useState')}>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                Use State
-            </div>
+        <MainNav/>
+        <h1>Home</h1>
+        <button type="button" class="btn btn-outline-secondary" onClick={() => history.push('/useState')}>Use State</button>
         </>
     )
 }
