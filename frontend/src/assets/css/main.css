@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  color: aliceblue;
+}
+body {
+  background: url("../images/hero-bg.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+h1 {
+  font-family: "Dancing Script", cursive;
+}
+.card {
+  height: 200px;
+}
+#crd {
+  background-color: #222831;
+}
+.card-img-top {
+  height: 198px;
+}
