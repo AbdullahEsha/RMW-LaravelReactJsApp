@@ -7,14 +7,12 @@
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "bootstrap": "^5.1.0",
-    "jquery": "^3.6.0",
     "react": "^17.0.2",
     "react-bootstrap": "^1.6.1",
     "react-dom": "^17.0.2",
     "react-icons": "^4.3.1",
     "react-router-dom": "^5.2.1",
     "react-scripts": "4.0.3",
-    "rsuite": "^5.5.2",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
