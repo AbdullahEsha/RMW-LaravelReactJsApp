@@ -1,14 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import MainNav from "./../Component/nav.js";
-import "./../Component/nav.js";
-import "../assets/css/main.css";
+import MainNav from "./../Component/nav";
+import Menu from "./../Component/menuApi";
+import Menubar from "./../Component/menuBar";
+import MenuCard from "./../Component/menuCard";
+import "../assets/css/style.css";
 import ImgMid1 from "../assets/images/o1.jpg";
 import ImgMid2 from "../assets/images/o2.jpg";
 import { Container, Row, Col } from "react-bootstrap";
 
+const uniqueList = [
+  ...new Set(
+    Menu.map((curElem) => {
+      return curElem.category;
+    })
+  ),
+  "All",
+];
+
 const Index = () => {
   const history = useHistory();
+  const [menuData, setMenuData] = useState(Menu);
+  const [menuList, setMenuList] = useState(uniqueList);
+
+  console.log(setMenuList);
+
+  const filterItem = (category) => {
+    if (category === "All") {
+      setMenuData(Menu);
+      return;
+    }
+
+    const updatedList = Menu.filter((curElem) => {
+      return curElem.category === category;
+    });
+
+    setMenuData(updatedList);
+  };
   return (
     <>
       <MainNav />
@@ -61,7 +89,7 @@ const Index = () => {
 
       <Container>
         <Row>
-          <Col xs={12} md={6} align="center">
+          <Col xs={12} md={6} align="center" className="clsbtm">
             <div className="card" id="crd">
               <Row>
                 <Col xs={6} md={6}>
@@ -79,7 +107,7 @@ const Index = () => {
               </Row>
             </div>
           </Col>
-          <Col xs={12} md={6} align="center">
+          <Col xs={12} md={6} align="center" className="clsbtm">
             <div className="card" id="crd">
               <Row>
                 <Col xs={6} md={6}>
@@ -103,6 +131,10 @@ const Index = () => {
         <div align="center">
           <h1>Menu</h1>
         </div>
+      </Container>
+      <Container>
+        <Menubar filterItem={filterItem} menuList={menuList} />
+        <MenuCard menuData={menuData} />
       </Container>
     </>
   );
