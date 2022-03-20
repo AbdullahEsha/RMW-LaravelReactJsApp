@@ -43,8 +43,8 @@ body {
 }
 
 .card {
+  max-width: 280px;
   background-color: #222831;
-  padding: 30px;
   position: relative;
   box-shadow: 0 0 5px rgba(75, 75, 75, 0.07);
   z-index: 1;
@@ -79,8 +79,7 @@ body {
 
 .card-title {
   font-weight: 300;
-  line-height: 60px;
-  margin: 10px 0;
+  line-height: 30px;
   text-transform: capitalize;
   color: white;
 }
@@ -127,7 +126,7 @@ body {
 }
 
 .card-media {
-  max-width: 100%;
+  max-width: 280px;
   height: auto;
 }
 
@@ -157,7 +156,7 @@ body {
 }
 
 .menuBar h1 {
-  padding-bottom: 20px;
+  padding-bottom: 10px;
   text-transform: capitalize;
 }
 
@@ -169,7 +168,7 @@ body {
 .btn-group__item {
   border: none;
   /* min-width: 6rem; */
-  padding: 1rem 1rem;
+  padding: 0.6rem 0.6rem;
   background-color: rgb(255, 255, 255);
   cursor: pointer;
   margin: 0;
@@ -231,4 +230,14 @@ body {
 
 .drksec {
   background-color: #222831;
+}
+#odr {
+  text-decoration: none;
+  padding: 8px;
+  color: #fff;
+  border: solid 1px #ffc107;
+}
+
+#odr:hover {
+  background-color: #ffc107a9;
 }

@@ -56,14 +56,14 @@ const Index = () => {
               <br />
               <i>
                 <h1 style={{ color: "white" }}>
-                  Lorem Ipsum is simply lorem including of Lorem Ipsum.
+                  Lorem Ipsum is of Lorem Ipsum.
                 </h1>
               </i>
               <i>
                 <h6 style={{ color: "white" }}>
                   Lorem Ipsum is simply dummy text of the Aldus PageMaker
-                  including versions of Lorem Ipsum.Lorem Ipsum is simply dummy
-                  text of the Aldus PageMaker including versions of Lorem Ipsum.
+                  including versions of Lorem Ipsum.including versions of Lorem
+                  Ipsum.
                 </h6>
               </i>
             </div>
@@ -147,35 +147,35 @@ const Index = () => {
         <br />
       </section>
       <section className="drksec">
-        <Row>
-          <Col xs={12} md={6}>
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <div align="center">
-              <h1 style={{ color: "white" }}>Some quick example</h1>
-              <h5 style={{ color: "white" }}>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </h5>
-            </div>
-            <br />
-            <br />
-          </Col>
-          <Col xs={12} md={6}>
-            <div align="center">
-              <br />
-              <img src={ImgBnr} className="" alt="ImgBnr" height="350px" />
+        <Container>
+          <Row>
+            <Col xs={12} md={6}>
               <br />
               <br />
-            </div>
-          </Col>
-        </Row>
+              <br />
+              <br />
+              <br />
+              <br />
+              <div align="center">
+                <h1 style={{ color: "white" }}>Some quick example</h1>
+                <h6 style={{ color: "white" }}>
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </h6>
+              </div>
+              <br />
+              <br />
+            </Col>
+            <Col xs={12} md={6}>
+              <div align="center">
+                <br />
+                <img src={ImgBnr} className="" alt="ImgBnr" height="350px" />
+                <br />
+                <br />
+              </div>
+            </Col>
+          </Row>
+        </Container>
       </section>
     </>
   );
