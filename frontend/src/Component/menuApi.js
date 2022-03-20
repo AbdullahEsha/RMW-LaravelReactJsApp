@@ -1,7 +1,7 @@
 const Menu = [
   {
     id: 1,
-    image: "../assets/images/maggi.jpg",
+    image: "http://localhost:8000/uploads/images/maggi.jpg",
     name: "maggi",
     category: "breakfast",
     price: "12$",
@@ -11,7 +11,7 @@ const Menu = [
 
   {
     id: 2,
-    image: "./../../public/images/allupakoida.jpg",
+    image: "http://localhost:8000/uploads/images/allupakoida.jpg",
     name: "allu pakoida",
     category: "evening",
     price: "20$",
@@ -20,7 +20,7 @@ const Menu = [
   },
   {
     id: 3,
-    image: "./../assets/images/corn.jpg",
+    image: "http://localhost:8000/uploads/images/corn.jpg",
     name: "corn",
     category: "breakfast",
     price: "10$",
@@ -29,7 +29,7 @@ const Menu = [
   },
   {
     id: 4,
-    image: "./../assets/images/chola.jpg",
+    image: "http://localhost:8000/uploads/images/chola.jpg",
     name: "chola",
     category: "lunch",
     price: "50$",
@@ -38,7 +38,7 @@ const Menu = [
   },
   {
     id: 5,
-    image: "./../assets/images/pizza.jpg",
+    image: "http://localhost:8000/uploads/images/pizza.jpg",
     name: "pizza",
     category: "evening",
     price: "80$",
@@ -47,7 +47,7 @@ const Menu = [
   },
   {
     id: 6,
-    image: "./../assets/images/nonvegthali.jpg",
+    image: "http://localhost:8000/uploads/images/nonvegthali.jpg",
     name: "Non-Veg Thali",
     category: "dinner",
     price: "180$",
@@ -56,7 +56,7 @@ const Menu = [
   },
   {
     id: 7,
-    image: "./../assets/images/sweet.jpg",
+    image: "http://localhost:8000/uploads/images/sweet.jpg",
     name: "Sweets",
     category: "dinner",
     price: "60$",
@@ -65,7 +65,7 @@ const Menu = [
   },
   {
     id: 8,
-    image: "./../assets/images/rajmarice.jpg",
+    image: "http://localhost:8000/uploads/images/rajmarice.jpg",
     name: "Rajma Rice",
     category: "lunch",
     price: "60$",
@@ -74,7 +74,7 @@ const Menu = [
   },
   {
     id: 9,
-    image: "./../assets/images/samosa.jpg",
+    image: "http://localhost:8000/uploads/images/samosa.jpg",
     name: "samaso",
     category: "evening",
     price: "10$",
@@ -83,7 +83,7 @@ const Menu = [
   },
   {
     id: 10,
-    image: "./../assets/images/momo.jpg",
+    image: "http://localhost:8000/uploads/images/momo.jpg",
     name: "Momo",
     category: "new",
     price: "10$",

@@ -1,7 +1,7 @@
 import React from "react";
 
 const MenuCard = ({ menuData }) => {
-  //console.log(menuData);
+  console.log(menuData);
   return (
     <>
       <section className="main-card--cointainer">
@@ -11,7 +11,7 @@ const MenuCard = ({ menuData }) => {
           return (
             <>
               <div className="card-container" key={id}>
-                <div className="card">
+                <div className="card" style={{ backgroundColor: "#222831" }}>
                   <div className="card-body">
                     <span className="card-number card-circle subtle">{id}</span>
                     <span className="card-author subtle"> {category}</span>
