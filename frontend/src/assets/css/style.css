@@ -239,5 +239,54 @@ body {
 }
 
 #odr:hover {
-  background-color: #ffc107a9;
+  background-color: rgba(255, 255, 0, 0.692);
+}
+
+.mapouter {
+  position: relative;
+  text-align: right;
+  height: 300px;
+  width: 500px;
+}
+
+.gmap_canvas {
+  overflow: hidden;
+  background: none !important;
+  height: 300px;
+  width: 500px;
+}
+li {
+  list-style-type: none;
+}
+
+li a {
+  text-decoration: none;
+  color: #fff;
+  text-align: center;
+}
+
+.iconpad {
+  padding: 3px;
+}
+
+.footer_social a i {
+  padding-top: 8px;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  background-color: #fff;
+  color: #222831;
+}
+
+.footer_social a i:hover {
+  color: #fdd10e;
+}
+
+@media (max-width: 998px) {
+  .gmap_canvas {
+    width: 360px;
+  }
+  .mapouter {
+    width: 360px;
+  }
 }
