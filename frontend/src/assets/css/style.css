@@ -282,6 +282,10 @@ li a {
   color: #fdd10e;
 }
 
+#mynm {
+  text-decoration: none;
+}
+
 h1,
 h2,
 h3 {
