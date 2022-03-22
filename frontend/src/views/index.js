@@ -41,10 +41,41 @@ const Index = () => {
   return (
     <>
       <MainNav />
-      <Container>
-        <Row>
-          <Col xs={12} md={6}>
-            <div>
+      <section id="home">
+        <Container>
+          <Row>
+            <Col xs={12} md={6}>
+              <div>
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <i>
+                  <h1 style={{ color: "white" }}>
+                    Lorem Ipsum is of Lorem Ipsum.
+                  </h1>
+                </i>
+                <i>
+                  <h6 style={{ color: "white" }}>
+                    Lorem Ipsum is simply dummy text of the Aldus PageMaker
+                    including versions of Lorem Ipsum.including versions of
+                    Lorem Ipsum.
+                  </h6>
+                </i>
+              </div>
+              <br />
+              <button
+                type="button"
+                class="btn btn-warning"
+                onClick={() => history.push("/useState")}
+              >
+                Use State
+              </button>
               <br />
               <br />
               <br />
@@ -54,42 +85,13 @@ const Index = () => {
               <br />
               <br />
               <br />
-              <i>
-                <h1 style={{ color: "white" }}>
-                  Lorem Ipsum is of Lorem Ipsum.
-                </h1>
-              </i>
-              <i>
-                <h6 style={{ color: "white" }}>
-                  Lorem Ipsum is simply dummy text of the Aldus PageMaker
-                  including versions of Lorem Ipsum.including versions of Lorem
-                  Ipsum.
-                </h6>
-              </i>
-            </div>
-            <br />
-            <button
-              type="button"
-              class="btn btn-outline-secondary"
-              onClick={() => history.push("/useState")}
-            >
-              Use State
-            </button>
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-          </Col>
-          <Col xs={0} md={6}></Col>
-        </Row>
-      </Container>
-      <section className="menuBarCard">
+              <br />
+            </Col>
+            <Col xs={0} md={6}></Col>
+          </Row>
+        </Container>
+      </section>
+      <section className="menuBarCard" id="menu">
         <br />
         <br />
         <Container>
@@ -177,7 +179,7 @@ const Index = () => {
           </Row>
         </Container>
       </section>
-      <section className="menuBarCard">
+      <section className="menuBarCard" id="booktable">
         <Container>
           <Row>
             <Col xs={12} md={6}>
@@ -248,6 +250,7 @@ const Index = () => {
               <br />
               <div class="mapouter">
                 <div class="gmap_canvas">
+                  {/* eslint-disable-next-line */}
                   <iframe
                     width="500"
                     height="300"
@@ -257,8 +260,7 @@ const Index = () => {
                     scrolling="no"
                     marginheight="0"
                     marginwidth="0"
-                  ></iframe>
-                  <a href="https://www.google.com/maps"></a>
+                  />
                   <br />
                 </div>
               </div>
@@ -268,15 +270,18 @@ const Index = () => {
         <br />
       </section>
 
-      <section className="drksec">
+      <section className="drksec" id="about">
         <br />
         <Container>
           <Row align="center">
             <Col xs={12} md={4}>
               <br />
               <h3 style={{ color: "white" }}>Contact Us</h3>
+              <br />
               <li>
-                <a href="#">Location</a>
+                <a href="https://www.google.com/maps/place/Dhaka/@23.7807777,90.3492857,12z/data=!3m1!4b1!4m5!3m4!1s0x3755b8b087026b81:0x8fa563bbdd5904c2!8m2!3d23.810332!4d90.4125181">
+                  Location
+                </a>
               </li>
               <li>
                 <a href="tel:+4733378901">Call +4733378901</a>
@@ -288,24 +293,25 @@ const Index = () => {
             <Col xs={12} md={4}>
               <br />
               <h3 style={{ color: "white" }}>Restaurant</h3>
+              <br />
               <p style={{ color: "white" }}>
                 Necessary, making this the first true generator on the Internet.
                 It uses a dictionary of over 200 Latin words, combined with
               </p>
               <div class="footer_social">
-                <a href="" className="iconpad">
+                <a href={"https://www.facebook.com/"} className="iconpad">
                   <i className="fa fa-facebook" aria-hidden="true"></i>
                 </a>
-                <a href="" className="iconpad">
+                <a href={"https://www.facebook.com/"} className="iconpad">
                   <i className="fa fa-twitter" aria-hidden="true"></i>
                 </a>
-                <a href="" className="iconpad">
+                <a href={"https://www.facebook.com/"} className="iconpad">
                   <i className="fa fa-linkedin" aria-hidden="true"></i>
                 </a>
-                <a href="" className="iconpad">
+                <a href={"https://www.facebook.com/"} className="iconpad">
                   <i className="fa fa-instagram" aria-hidden="true"></i>
                 </a>
-                <a href="" className="iconpad">
+                <a href={"https://www.facebook.com/"} className="iconpad">
                   <i className="fa fa-pinterest" aria-hidden="true"></i>
                 </a>
               </div>
@@ -313,8 +319,9 @@ const Index = () => {
             <Col xs={12} md={4}>
               <br />
               <h3 style={{ color: "white" }}>Opening Hours</h3>
-              <h6 style={{ color: "white" }}>Everyday</h6>
-              <h6 style={{ color: "white" }}>10.00 Am -10.00 Pm</h6>
+              <br />
+              <p style={{ color: "white" }}>Everyday</p>
+              <p style={{ color: "white" }}>10.00 Am -10.00 Pm</p>
             </Col>
           </Row>
           <Row align="center">
@@ -322,12 +329,12 @@ const Index = () => {
               <br />
               <br />
               <br />
-              <h6 style={{ color: "white" }}>
+              <p style={{ color: "white" }}>
                 © 2022 All Rights Reserved{" "}
-                <a href="https://abdullahisha.github.io/" className="iconpad">
+                <a href="https://abdullahisha.github.io/" id="mynm">
                   <i>Shahriar Abdullah Isha</i>
                 </a>
-              </h6>
+              </p>
             </Col>
           </Row>
         </Container>

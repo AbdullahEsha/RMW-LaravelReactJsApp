@@ -282,6 +282,16 @@ li a {
   color: #fdd10e;
 }
 
+#mynm {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Dancing Script", cursive;
+}
+
 @media (max-width: 998px) {
   .gmap_canvas {
     width: 360px;
