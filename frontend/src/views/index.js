@@ -177,6 +177,161 @@ const Index = () => {
           </Row>
         </Container>
       </section>
+      <section className="menuBarCard">
+        <Container>
+          <Row>
+            <Col xs={12} md={6}>
+              <br />
+              <h1>
+                <i>Book A Table</i>
+              </h1>
+              <br />
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Name"
+                  name="Name"
+                  aria-describedby="inputGroupFileAddon04"
+                  aria-label="Upload"
+                />
+              </div>
+              <br />
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Phone Number"
+                  name="phone"
+                  aria-describedby="inputGroupFileAddon04"
+                  aria-label="Upload"
+                />
+              </div>
+              <br />
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Email"
+                  name="email"
+                  aria-describedby="inputGroupFileAddon04"
+                  aria-label="Upload"
+                />
+              </div>
+              <br />
+              <div class="form-group">
+                <input
+                  type="date"
+                  class="form-control"
+                  id="inputGroupFile04"
+                  aria-describedby="inputGroupFileAddon04"
+                  aria-label="Upload"
+                />
+              </div>
+              <br />
+              <div class="form-group">
+                <select class="form-control nice-select wide">
+                  <option value="" disabled selected>
+                    How many persons?
+                  </option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </div>
+            </Col>
+            <Col xs={12} md={6}>
+              <br />
+              <br />
+              <br />
+              <br />
+              <div class="mapouter">
+                <div class="gmap_canvas">
+                  <iframe
+                    width="500"
+                    height="300"
+                    id="gmap_canvas"
+                    src="https://maps.google.com/maps?q=Dhaka,%20Bangladesh&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                    frameborder="0"
+                    scrolling="no"
+                    marginheight="0"
+                    marginwidth="0"
+                  ></iframe>
+                  <a href="https://www.google.com/maps"></a>
+                  <br />
+                </div>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+        <br />
+      </section>
+
+      <section className="drksec">
+        <br />
+        <Container>
+          <Row align="center">
+            <Col xs={12} md={4}>
+              <br />
+              <h3 style={{ color: "white" }}>Contact Us</h3>
+              <li>
+                <a href="#">Location</a>
+              </li>
+              <li>
+                <a href="tel:+4733378901">Call +4733378901</a>
+              </li>
+              <li>
+                <a href="mailto:webmaster@example.com">webmaster@example.com</a>
+              </li>
+            </Col>
+            <Col xs={12} md={4}>
+              <br />
+              <h3 style={{ color: "white" }}>Restaurant</h3>
+              <p style={{ color: "white" }}>
+                Necessary, making this the first true generator on the Internet.
+                It uses a dictionary of over 200 Latin words, combined with
+              </p>
+              <div class="footer_social">
+                <a href="" className="iconpad">
+                  <i className="fa fa-facebook" aria-hidden="true"></i>
+                </a>
+                <a href="" className="iconpad">
+                  <i className="fa fa-twitter" aria-hidden="true"></i>
+                </a>
+                <a href="" className="iconpad">
+                  <i className="fa fa-linkedin" aria-hidden="true"></i>
+                </a>
+                <a href="" className="iconpad">
+                  <i className="fa fa-instagram" aria-hidden="true"></i>
+                </a>
+                <a href="" className="iconpad">
+                  <i className="fa fa-pinterest" aria-hidden="true"></i>
+                </a>
+              </div>
+            </Col>
+            <Col xs={12} md={4}>
+              <br />
+              <h3 style={{ color: "white" }}>Opening Hours</h3>
+              <h6 style={{ color: "white" }}>Everyday</h6>
+              <h6 style={{ color: "white" }}>10.00 Am -10.00 Pm</h6>
+            </Col>
+          </Row>
+          <Row align="center">
+            <Col xs={12} md={12}>
+              <br />
+              <br />
+              <br />
+              <h6 style={{ color: "white" }}>
+                © 2022 All Rights Reserved{" "}
+                <a href="https://abdullahisha.github.io/" className="iconpad">
+                  <i>Shahriar Abdullah Isha</i>
+                </a>
+              </h6>
+            </Col>
+          </Row>
+        </Container>
+      </section>
     </>
   );
 };
