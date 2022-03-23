@@ -6,6 +6,7 @@ import UseReducer from "./Component/Hooks/useReducer";
 import Home from "./views/index";
 import Index from "./Component/Hooks/home";
 import FullMenu from "./views/admin/index";
+import Upload from "./views/admin/uploadItem";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <Route path="/useReducer" component={UseReducer} />
       <Route path="/index" component={Index} />
       <Route path="/admin/index" component={FullMenu} />
+      <Route path="/admin/upload" component={Upload} />
       <Route path="/" component={Home} exact />
     </Router>
   );
