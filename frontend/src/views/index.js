@@ -149,7 +149,7 @@ const Index = () => {
         <br />
         <br />
       </section>
-      <section className="drksec">
+      <section className="drksec" id="booktable">
         <Container>
           <Row>
             <Col xs={12} md={6}>
@@ -180,7 +180,7 @@ const Index = () => {
           </Row>
         </Container>
       </section>
-      <section className="menuBarCard" id="booktable">
+      <section className="menuBarCard">
         <Container>
           <Row>
             <Col xs={12} md={6}>
