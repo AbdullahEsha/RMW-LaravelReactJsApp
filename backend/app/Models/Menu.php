@@ -9,6 +9,7 @@ class Menu extends Model
 {
     use HasFactory;
 
+    protected $table = 'menu';
     /**
      * The attributes that are mass assignable.
      *

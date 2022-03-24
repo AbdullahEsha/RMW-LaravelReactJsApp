@@ -1,10 +1,13 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 import "../../assets/css/style.css";
+import Footer from "../../Component/footer";
+import MainNav from "../../Component/nav";
 
 const FullMenu = () => {
   return (
     <>
+      <MainNav />
       <section className="menuBarCard">
         <Container>
           <table class="table table-responsive table-light">
@@ -38,6 +41,7 @@ const FullMenu = () => {
           </table>
         </Container>
       </section>
+      <Footer />
     </>
   );
 };
