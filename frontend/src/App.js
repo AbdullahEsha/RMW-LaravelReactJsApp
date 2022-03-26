@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import UseState from "./Component/Hooks/useState";
 import UseEffect from "./Component/Hooks/useEffect";
@@ -8,6 +9,8 @@ import Index from "./Component/Hooks/home";
 import FullMenu from "./views/admin/index";
 import Upload from "./views/admin/uploadItem";
 import "bootstrap/dist/css/bootstrap.min.css";
+
+axios.defaults.baseURL = "http://127.0.0.1:8000/api/";
 
 function App() {
   return (
