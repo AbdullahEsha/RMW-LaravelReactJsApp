@@ -15,6 +15,9 @@ const FullMenu = () => {
   const [price, setPrice] = useState();
   const [description, setDescription] = useState();
   const [img, setImg] = useState();
+  const [validationError, setValidationError] = useState({});
+
+  console.log(validationError);
 
   const addItem = async (e) => {
     e.preventDefault();
@@ -27,13 +30,25 @@ const FullMenu = () => {
     formData.append("description", description);
     formData.append("img", img);
 
-    await axios.post(`admin/upload`, formData).then(({ data }) => {
-      Swal.fire({
-        icon: "success",
-        text: data.message,
+    await axios
+      .post(`admin/upload`, formData)
+      .then(({ data }) => {
+        Swal.fire({
+          icon: "success",
+          text: data.message,
+        });
+        history.push("/");
+      })
+      .catch(({ response }) => {
+        if (response.status === 422) {
+          setValidationError(response.data.errors);
+        } else {
+          Swal.fire({
+            text: response.data.message,
+            icon: "error",
+          });
+        }
       });
-      history.push("/");
-    });
   };
 
   return (
@@ -57,8 +72,7 @@ const FullMenu = () => {
                 onChange={(event) => {
                   setName(event.target.value);
                 }}
-                aria-describedby="inputGroupFileAddon04"
-                aria-label="Upload"
+                required
               />
             </div>
             <br />
@@ -72,8 +86,7 @@ const FullMenu = () => {
                 onChange={(event) => {
                   setCategory(event.target.value);
                 }}
-                aria-describedby="inputGroupFileAddon04"
-                aria-label="Upload"
+                required
               />
             </div>
             <br />
@@ -87,8 +100,7 @@ const FullMenu = () => {
                 onChange={(event) => {
                   setPrice(event.target.value);
                 }}
-                aria-describedby="inputGroupFileAddon04"
-                aria-label="Upload"
+                required
               />
             </div>
             <br />
@@ -102,8 +114,7 @@ const FullMenu = () => {
                 onChange={(event) => {
                   setDescription(event.target.value);
                 }}
-                aria-describedby="inputGroupFileAddon04"
-                aria-label="Upload"
+                required
               />
             </div>
             <br />
@@ -116,8 +127,7 @@ const FullMenu = () => {
                 onChange={(event) => {
                   setImg(event.target.value);
                 }}
-                aria-describedby="inputGroupFileAddon04"
-                aria-label="Upload"
+                required
               />
             </div>
             <br />
