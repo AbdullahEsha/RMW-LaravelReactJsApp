@@ -12,12 +12,16 @@ const FullMenu = () => {
 
   const [name, setName] = useState("");
   const [category, setCategory] = useState("");
-  const [price, setPrice] = useState();
-  const [description, setDescription] = useState();
-  const [img, setImg] = useState();
+  const [price, setPrice] = useState("");
+  const [description, setDescription] = useState("");
+  const [img, setImg] = useState("");
   const [validationError, setValidationError] = useState({});
 
   console.log(validationError);
+
+  const changeHandler = (event) => {
+    setImg(event.target.files[0]);
+  };
 
   const addItem = async (e) => {
     e.preventDefault();
@@ -123,10 +127,7 @@ const FullMenu = () => {
                 type="file"
                 class="form-control"
                 name="img"
-                value={img}
-                onChange={(event) => {
-                  setImg(event.target.value);
-                }}
+                onChange={changeHandler}
                 required
               />
             </div>
