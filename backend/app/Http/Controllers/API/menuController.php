@@ -11,14 +11,16 @@ class menuController extends Controller
     public function store(Request $req){
         $menu = new Menu;
         try {
-            // $rename = $req->file('img')->getClientOriginalName();
+            $rename = $req->file('img')->getClientOriginalName();
             $menu->name = $req->name;
             $menu->category = $req->category;
             $menu->price = $req->price;
             $menu->description = $req->description;
-            $menu->img = 'img/uploads/'.time().'.jpg';
+            $menu->img = 'uploads/images/'.$rename;
 
             $menu->save();
+            $req->file('img')->move('uploads/images', $rename);
+
             return  response()-> json([
                 "message" => 'Item added to the menu table...',
             ]);
