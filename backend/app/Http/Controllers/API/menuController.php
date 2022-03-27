@@ -16,11 +16,11 @@ class menuController extends Controller
             $menu->category = $req->category;
             $menu->price = $req->price;
             $menu->description = $req->description;
-            $menu->img = 'img/uploads/'.$rename;
+            $menu->img = 'uploads/images/'.$rename;
 
             $menu->save();
-            $req->file('img')->move('img/uploads', $rename);
-            
+            $req->file('img')->move('uploads/images', $rename);
+
             return  response()-> json([
                 "message" => 'Item added to the menu table...',
             ]);
