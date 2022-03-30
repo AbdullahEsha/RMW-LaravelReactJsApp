@@ -1,10 +1,29 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Container } from "react-bootstrap";
 import "../../assets/css/style.css";
 import Footer from "../../Component/footer";
 import MainNav from "../../Component/nav";
+import axios from "axios";
 
 const FullMenu = () => {
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    AllCategoryList();
+  }, []);
+
+  const AllCategoryList = () => {
+    axios
+      .get("admin/index")
+      .then((resp) => {
+        console.log(resp.data);
+        setCategories(resp.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <>
       <MainNav />
@@ -22,21 +41,28 @@ const FullMenu = () => {
               </tr>
             </thead>
             <tbody align="center">
-              <tr>
-                <td>image</td>
-                <td>name</td>
-                <td>category</td>
-                <td>price</td>
-                <td>description</td>
-                <td>
-                  <button type="button" class="btn btn-outline-primary">
-                    Primary
-                  </button>
-                  <button type="button" class="btn btn-outline-danger">
-                    Danger
-                  </button>
-                </td>
-              </tr>
+              {categories.map((c) => (
+                <tr>
+                  <td>
+                    <img
+                      src={"http://localhost:8000/" + c.img}
+                      height={"70px"}
+                    />
+                  </td>
+                  <td>{c.name}</td>
+                  <td>{c.category}</td>
+                  <td>{c.price}</td>
+                  <td>{c.description}</td>
+                  <td>
+                    <button type="button" class="btn btn-outline-primary">
+                      Update
+                    </button>
+                    <button type="button" class="btn btn-outline-danger">
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </Container>

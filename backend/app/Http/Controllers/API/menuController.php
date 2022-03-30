@@ -7,7 +7,21 @@ use Illuminate\Http\Request;
 use App\Models\Menu;
 
 class menuController extends Controller
-{
+{   
+
+    public function getData(){
+        try{
+        $menuData = Menu::orderBy('id', 'desc')->get();
+        return $menuData;
+        //return view('home')->with('home', $home);
+        }
+        catch (\Exception $e) {
+            return  response()-> json([
+                "message" => $e->getMessage(),
+            ]);
+        }
+        
+    }
     public function store(Request $req){
         $menu = new Menu;
         try {

@@ -8,6 +8,7 @@ use App\Http\Controllers\API\userController;
 
 Route::post('/admin/upload', [MenuController::class, 'store']);
 Route::post('/login', [UserController::class, 'verify']);
+Route::get('/admin/index', [MenuController::class, 'getData']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
