@@ -1,0 +1,35 @@
+.cardlogin {
+  background-color: rgba(255, 255, 255, 0.836);
+  padding: 20px;
+  box-shadow: 0 4px 8px 0 rgb(221, 221, 221);
+  border-radius: 5px;
+}
+.cardlogin:hover {
+  box-shadow: 0 8px 16px 0 rgb(228, 226, 226);
+}
+.cardlogin img {
+  width: 250px;
+}
+
+@media all and (min-width: 480px) {
+  .Login {
+    padding: 60px 0;
+  }
+
+  .Login form {
+    margin: 10% auto;
+    max-width: 320px;
+  }
+}
+
+@media all and (max-width: 480px) {
+  .Login {
+    padding: 60px 0;
+  }
+
+  .Login form {
+    margin: 10% auto;
+    margin-top: 30%;
+    max-width: 320px;
+  }
+}
