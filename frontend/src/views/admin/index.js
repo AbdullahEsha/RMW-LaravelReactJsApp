@@ -4,6 +4,7 @@ import "../../assets/css/style.css";
 import Footer from "../../Component/footer";
 import MainNav from "../../Component/nav";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 const FullMenu = () => {
   const [categories, setCategories] = useState([]);
@@ -15,12 +16,18 @@ const FullMenu = () => {
   const AllCategoryList = () => {
     axios
       .get("admin/index")
-      .then((resp) => {
-        console.log(resp.data);
-        setCategories(resp.data);
+      .then((response) => {
+        console.log(response.data);
+        setCategories(response.data);
       })
-      .catch((err) => {
-        console.log(err);
+      .catch(() => {
+        Swal.fire({
+          text: "DB couldn't be loaded!!!",
+          icon: "error",
+          timer: 100,
+        }).then(function () {
+          window.location = "http://localhost:3000";
+        });
       });
   };
 
