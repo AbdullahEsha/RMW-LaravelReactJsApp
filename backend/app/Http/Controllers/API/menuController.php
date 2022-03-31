@@ -11,9 +11,8 @@ class menuController extends Controller
 
     public function getData(){
         try{
-        $menuData = Menu::orderBy('id', 'desc')->get();
-        return $menuData;
-        //return view('home')->with('home', $home);
+            $menuData = Menu::orderBy('id', 'desc')->get();
+            return $menuData;
         }
         catch (\Exception $e) {
             return  response()-> json([
@@ -22,6 +21,7 @@ class menuController extends Controller
         }
         
     }
+
     public function store(Request $req){
         $menu = new Menu;
         try {

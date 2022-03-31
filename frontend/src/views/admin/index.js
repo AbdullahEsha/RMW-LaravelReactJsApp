@@ -32,32 +32,41 @@ const FullMenu = () => {
           <table class="table table-responsive table-light">
             <thead align="center">
               <tr>
-                <th scope="col">image</th>
-                <th scope="col">name</th>
-                <th scope="col">category</th>
-                <th scope="col">price</th>
-                <th scope="col">description</th>
+                <th scope="col">Image</th>
+                <th scope="col">Name</th>
+                <th scope="col">Category</th>
+                <th scope="col">Price</th>
+                <th scope="col">Description</th>
                 <th scope="col">Action</th>
               </tr>
             </thead>
             <tbody align="center">
               {categories.map((c) => (
                 <tr>
-                  <td>
+                  <td height={"70px"} width={"100px"}>
                     <img
                       src={"http://localhost:8000/" + c.img}
                       height={"70px"}
+                      width={"100px"}
+                      alt="itemImg"
                     />
                   </td>
                   <td>{c.name}</td>
                   <td>{c.category}</td>
                   <td>{c.price}</td>
-                  <td>{c.description}</td>
                   <td>
-                    <button type="button" class="btn btn-outline-primary">
+                    <textarea rows="3" cols="30" disabled>
+                      {c.description}
+                    </textarea>
+                  </td>
+                  <td>
+                    <button
+                      type="button"
+                      class="btn btn-outline-primary btn-sm"
+                    >
                       Update
-                    </button>
-                    <button type="button" class="btn btn-outline-danger">
+                    </button>{" "}
+                    <button type="button" class="btn btn-outline-danger btn-sm">
                       Delete
                     </button>
                   </td>
