@@ -10,6 +10,7 @@ import FullMenu from "./views/admin/index";
 import Upload from "./views/admin/uploadItem";
 import Login from "./views/login";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Order from "./views/order";
 
 axios.defaults.baseURL = "http://127.0.0.1:8000/api/";
 
@@ -23,6 +24,7 @@ function App() {
       <Route path="/admin/index" component={FullMenu} />
       <Route path="/admin/upload" component={Upload} />
       <Route path="/login" component={Login} />
+      <Route path="/order/:id" component={Order} />
       <Route path="/" component={Home} exact />
     </Router>
   );

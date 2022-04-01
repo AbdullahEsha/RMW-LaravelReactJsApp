@@ -34,7 +34,7 @@ const MenuCard = ({ showItem, menuData }) => {
                         <h3 style={{ color: "#fff" }}>{price}</h3>
                       </Col>
                       <Col xs={6} md={6} align="right">
-                        <a href="/order" id="odr">
+                        <a href={"/order/" + id} id="odr">
                           Order Now
                         </a>
                       </Col>

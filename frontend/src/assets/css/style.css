@@ -91,6 +91,10 @@ body {
   margin: 10px 0;
 }
 
+.crdmrgin {
+  padding: 20px;
+}
+
 .card-read {
   cursor: pointer;
   font-size: 14px;
