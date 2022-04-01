@@ -1,21 +1,23 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
 
-const MenuCard = ({ menuData }) => {
+const MenuCard = ({ showItem, menuData }) => {
   console.log(menuData);
   return (
     <>
       <section className="main-card--cointainer">
         {menuData.map((curElem) => {
-          const { id, name, category, image, price, description } = curElem;
+          const { id, name, category, img, price, description } = curElem;
 
           return (
             <>
               <div className="card-container" key={id}>
                 <div className="card">
-                  {/* <span className="card-number card-circle subtle">{id}</span>
-                  <span className="card-author subtle"> {category}</span> */}
-                  <img src={image} alt="images" className="card-media" />
+                  <img
+                    src={"http://localhost:8000/" + img}
+                    alt="images"
+                    className="card-media"
+                  />
                   <div
                     className="card-body"
                     style={{ backgroundColor: "#222831" }}

@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import MainNav from "./../Component/nav";
 import Footer from "./../Component/footer";
-import Menu from "./../Component/menuApi";
+//import Menu from "./../Component/menuApi";
 import Menubar from "./../Component/menuBar";
 import MenuCard from "./../Component/menuCard";
 import "../assets/css/style.css";
@@ -10,35 +10,48 @@ import ImgMid1 from "../assets/images/o1.jpg";
 import ImgMid2 from "../assets/images/o2.jpg";
 import ImgBnr from "../assets/images/aboutImg.png";
 import { Container, Row, Col } from "react-bootstrap";
-
-const uniqueList = [
-  ...new Set(
-    Menu.map((curElem) => {
-      return curElem.category;
-    })
-  ),
-  "All",
-];
+import axios from "axios";
 
 const Index = () => {
   const history = useHistory();
-  const [menuData, setMenuData] = useState(Menu);
+
+  const [menu, setMenu] = useState([]);
+
+  const GetMenu = () => {
+    axios.get("admin/index").then((response) => {
+      console.log(response.data);
+      setMenu(response.data);
+    });
+  };
+
+  const menuJson = JSON.parse(JSON.stringify(menu));
+
+  console.log(menuJson);
+
+  const uniqueList = ["breakfast", "lunch", "supper", "dinner", "All"];
+
+  const [menuData, setMenuData] = useState(menuJson);
   const [menuList, setMenuList] = useState(uniqueList);
 
   console.log(setMenuList);
 
   const filterItem = (category) => {
     if (category === "All") {
-      setMenuData(Menu);
+      setMenuData(menuJson);
       return;
     }
 
-    const updatedList = Menu.filter((curElem) => {
+    const updatedList = menuJson.filter((curElem) => {
       return curElem.category === category;
     });
 
     setMenuData(updatedList);
   };
+
+  useEffect(() => {
+    GetMenu();
+  }, []);
+
   return (
     <>
       <MainNav />
