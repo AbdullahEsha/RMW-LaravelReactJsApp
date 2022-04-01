@@ -9,10 +9,6 @@ import Swal from "sweetalert2";
 const FullMenu = () => {
   const [categories, setCategories] = useState([]);
 
-  useEffect(() => {
-    AllCategoryList();
-  }, []);
-
   const AllCategoryList = () => {
     axios
       .get("admin/index")
@@ -30,6 +26,10 @@ const FullMenu = () => {
         });
       });
   };
+
+  useEffect(() => {
+    AllCategoryList();
+  }, []);
 
   return (
     <>
