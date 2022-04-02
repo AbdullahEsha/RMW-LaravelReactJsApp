@@ -15,33 +15,27 @@ import axios from "axios";
 const Index = () => {
   const history = useHistory();
 
-  const [menu, setMenu] = useState([]);
-
   const GetMenu = () => {
     axios.get("admin/index").then((response) => {
       console.log(response.data);
-      setMenu(response.data);
+      setMenuData(response.data);
     });
   };
 
-  const menuJson = JSON.parse(JSON.stringify(menu));
-
-  console.log(menuJson);
-
   const uniqueList = ["breakfast", "lunch", "supper", "dinner", "All"];
 
-  const [menuData, setMenuData] = useState(menuJson);
+  const [menuData, setMenuData] = useState([]);
   const [menuList, setMenuList] = useState(uniqueList);
 
   console.log(setMenuList);
 
   const filterItem = (category) => {
     if (category === "All") {
-      setMenuData(menuJson);
+      setMenuData(menuData);
       return;
     }
 
-    const updatedList = menuJson.filter((curElem) => {
+    const updatedList = menuData.filter((curElem) => {
       return curElem.category === category;
     });
 

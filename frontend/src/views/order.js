@@ -22,7 +22,7 @@ const Order = () => {
               <Col xs={12} md={12}>
                 <img
                   src="https://www.adroitschoolbd.com/demo/images/flat-color-icons-svg/about.svg"
-                  alt="image"
+                  alt="ItemImage"
                   height="200px"
                   width="240px"
                 />
