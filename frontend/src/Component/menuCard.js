@@ -7,14 +7,12 @@ const MenuCard = ({ showItem, menuData }) => {
     <>
       <section className="main-card--cointainer">
         {menuData.map((curElem) => {
-          const { id, name, category, img, price, description } = curElem;
-
           return (
             <>
-              <div className="card-container" key={id}>
+              <div className="card-container" key={curElem.id}>
                 <div className="card">
                   <img
-                    src={"http://localhost:8000/" + img}
+                    src={"http://localhost:8000/" + curElem.img}
                     alt="images"
                     className="card-media"
                   />
@@ -22,19 +20,19 @@ const MenuCard = ({ showItem, menuData }) => {
                     className="card-body"
                     style={{ backgroundColor: "#222831" }}
                   >
-                    <h2 className="card-title"> {name} </h2>
-                    <h6 className="card-title">{category}</h6>
+                    <h2 className="card-title"> {curElem.name} </h2>
+                    <h6 className="card-title"> {curElem.category} </h6>
                     <span className="card-description subtle">
-                      {description}
+                      {curElem.description}
                     </span>
                     <br />
                     <br />
                     <Row>
                       <Col xs={6} md={6}>
-                        <h3 style={{ color: "#fff" }}>{price}</h3>
+                        <h3 style={{ color: "#fff" }}>{curElem.price}</h3>
                       </Col>
                       <Col xs={6} md={6} align="right">
-                        <a href={"/order/" + id} id="odr">
+                        <a href={"/order/" + curElem.id} id="odr">
                           Order Now
                         </a>
                       </Col>
