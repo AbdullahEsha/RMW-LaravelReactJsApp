@@ -1,7 +1,7 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
 
-const MenuCard = ({ showItem, menuData }) => {
+const MenuCard = ({ menuData }) => {
   console.log(menuData);
   return (
     <>

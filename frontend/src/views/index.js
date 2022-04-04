@@ -79,7 +79,7 @@ const Index = () => {
               <br />
               <button
                 type="button"
-                class="btn btn-warning"
+                className="btn btn-warning"
                 onClick={() => history.push("/useState")}
               >
                 Use State
@@ -130,11 +130,11 @@ const Index = () => {
                     <img src={ImgMid2} className="card-img-top" alt="ImgMid2" />
                   </Col>
                   <Col xs={6} md={6}>
-                    <div class="card-body">
-                      <h5 class="card-title" style={{ color: "white" }}>
+                    <div className="card-body">
+                      <h5 className="card-title" style={{ color: "white" }}>
                         Card title
                       </h5>
-                      <p class="card-text" style={{ color: "white" }}>
+                      <p className="card-text" style={{ color: "white" }}>
                         Some quick example text to build bulk of the card's
                         content.
                       </p>
@@ -196,10 +196,10 @@ const Index = () => {
                 <i>Book A Table</i>
               </h1>
               <br />
-              <div class="form-group">
+              <div className="form-group">
                 <input
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   placeholder="Name"
                   name="Name"
                   aria-describedby="inputGroupFileAddon04"
@@ -207,10 +207,10 @@ const Index = () => {
                 />
               </div>
               <br />
-              <div class="form-group">
+              <div className="form-group">
                 <input
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   placeholder="Phone Number"
                   name="phone"
                   aria-describedby="inputGroupFileAddon04"
@@ -218,10 +218,10 @@ const Index = () => {
                 />
               </div>
               <br />
-              <div class="form-group">
+              <div className="form-group">
                 <input
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   placeholder="Email"
                   name="email"
                   aria-describedby="inputGroupFileAddon04"
@@ -229,18 +229,18 @@ const Index = () => {
                 />
               </div>
               <br />
-              <div class="form-group">
+              <div className="form-group">
                 <input
                   type="date"
-                  class="form-control"
+                  className="form-control"
                   id="inputGroupFile04"
                   aria-describedby="inputGroupFileAddon04"
                   aria-label="Upload"
                 />
               </div>
               <br />
-              <div class="form-group">
-                <select class="form-control nice-select wide">
+              <div className="form-group">
+                <select className="form-control nice-select wide">
                   <option value="" disabled selected>
                     How many persons?
                   </option>
@@ -256,8 +256,8 @@ const Index = () => {
               <br />
               <br />
               <br />
-              <div class="mapouter">
-                <div class="gmap_canvas">
+              <div className="mapouter">
+                <div className="gmap_canvas">
                   {/* eslint-disable-next-line */}
                   <iframe
                     width="500"
