@@ -95,6 +95,26 @@ body {
   padding: 20px;
 }
 
+.crdmrgin img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.crdmrgin h3,
+h6 {
+  text-transform: capitalize;
+}
+
+/* @media screen and (max-width: 1000px) {
+  #containImg {
+    width: 305px;
+  }
+  .crdmrgin img {
+    height: 200px;
+  }
+} */
+
 .card-read {
   cursor: pointer;
   font-size: 14px;

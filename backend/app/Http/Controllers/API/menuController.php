@@ -44,4 +44,15 @@ class menuController extends Controller
             ]);
         }
     }
+
+    public function getMenuById($id){
+        try{
+            $menuById = Menu::where('id',$id)->first();
+            return $menuById;
+        }catch (\Exception $e) {
+            return  response()-> json([
+                "message" => $e->getMessage(),
+            ]);
+        }
+    }
 }

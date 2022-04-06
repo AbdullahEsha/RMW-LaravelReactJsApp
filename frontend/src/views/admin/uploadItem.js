@@ -3,7 +3,6 @@ import { Container, Form } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import "../../assets/css/style.css";
 import Footer from "../../Component/footer";
-import MainNav from "../../Component/nav";
 import Swal from "sweetalert2";
 import axios from "axios";
 
@@ -57,7 +56,6 @@ const FullMenu = () => {
 
   return (
     <>
-      <MainNav />
       <section className="menuBarCard">
         <Container>
           <br />
