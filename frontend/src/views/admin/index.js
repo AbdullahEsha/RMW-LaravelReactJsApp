@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Container } from "react-bootstrap";
 import "../../assets/css/style.css";
 import Footer from "../../Component/footer";
-import MainNav from "../../Component/nav";
 import axios from "axios";
 import Swal from "sweetalert2";
 
@@ -33,7 +32,6 @@ const FullMenu = () => {
 
   return (
     <>
-      <MainNav />
       <section className="menuBarCard">
         <Container>
           <table class="table table-responsive table-light">
