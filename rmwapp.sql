@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 31, 2022 at 09:51 AM
+-- Generation Time: Apr 06, 2022 at 09:39 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -20,6 +20,23 @@ SET time_zone = "+00:00";
 --
 -- Database: `rmwapp`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `booking`
+--
+
+CREATE TABLE `booking` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `c_name` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `b_date` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `n_person` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -65,7 +82,7 @@ INSERT INTO `menu` (`id`, `name`, `category`, `price`, `description`, `img`, `cr
 (4, 'paubhaji', 'lunch', '12$', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, at consectetur totam voluptatibus quibusdam iusto. Accusamus quas, soluta ipsam autem eius necessitatibus fugiat in .', 'uploads/images/paubhaji.jpg', '2022-03-26 14:23:13', '2022-03-26 14:23:13'),
 (5, 'allu pakoida', 'breakfast', '15$', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, at consectetur totam voluptatibus quibusdam iusto. Accusamus quas, soluta ipsam autem eius necessitatibus fugiat in .', 'uploads/images/allupakoida.jpg', '2022-03-26 14:26:06', '2022-03-26 14:26:06'),
 (6, 'pizza', 'lunch', '30$', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, at consectetur totam voluptatibus quibusdam iusto. Accusamus quas, soluta ipsam autem eius necessitatibus fugiat in .', 'uploads/images/pizza.jpg', '2022-03-27 06:52:26', '2022-03-27 06:52:26'),
-(7, 'chola', 'lunch', '8$', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, at consectetur totam voluptatibus quibusdam iusto. Accusamus quas, soluta ipsam autem eius necessitatibus fugiat in .', 'uploads/images/chola.jpg', '2022-03-27 06:56:30', '2022-03-27 06:56:30'),
+(7, 'chola', 'supper', '8$', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, at consectetur totam voluptatibus quibusdam iusto. Accusamus quas, soluta ipsam autem eius necessitatibus fugiat in .', 'uploads/images/chola.jpg', '2022-03-27 06:56:30', '2022-03-27 06:56:30'),
 (8, 'corn', 'breakfast', '7$', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, at consectetur totam voluptatibus quibusdam iusto. Accusamus quas, soluta ipsam autem eius necessitatibus fugiat in .', 'uploads/images/corn.jpg', '2022-03-27 07:24:21', '2022-03-27 07:24:21'),
 (9, 'samosa', 'dinner', '5$', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, at consectetur totam voluptatibus quibusdam iusto. Accusamus quas, soluta ipsam autem eius necessitatibus fugiat in .', 'uploads/images/samosa.jpg', '2022-03-27 07:35:20', '2022-03-27 07:35:20'),
 (10, 'sweet', 'dinner', '10$', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, at consectetur totam voluptatibus quibusdam iusto. Accusamus quas, soluta ipsam autem eius necessitatibus fugiat in .', 'uploads/images/sweet.jpg', '2022-03-27 07:49:18', '2022-03-27 07:49:18');
@@ -91,7 +108,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (2, '2014_10_12_100000_create_password_resets_table', 1),
 (3, '2019_08_19_000000_create_failed_jobs_table', 1),
 (4, '2019_12_14_000001_create_personal_access_tokens_table', 1),
-(5, '2022_03_23_062753_create_menu_table', 2);
+(5, '2022_03_23_062753_create_menu_table', 2),
+(6, '2022_04_04_190628_creat_order_table', 3),
+(7, '2022_04_04_193516_creat_booking_table', 4);
 
 -- --------------------------------------------------------
 
@@ -145,6 +164,12 @@ CREATE TABLE `users` (
 --
 
 --
+-- Indexes for table `booking`
+--
+ALTER TABLE `booking`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
@@ -190,6 +215,12 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `booking`
+--
+ALTER TABLE `booking`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
@@ -205,7 +236,7 @@ ALTER TABLE `menu`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`

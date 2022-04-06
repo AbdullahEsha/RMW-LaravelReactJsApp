@@ -18,8 +18,7 @@ class menuController extends Controller
             return  response()-> json([
                 "message" => $e->getMessage(),
             ]);
-        }
-        
+        } 
     }
 
     public function store(Request $req){
