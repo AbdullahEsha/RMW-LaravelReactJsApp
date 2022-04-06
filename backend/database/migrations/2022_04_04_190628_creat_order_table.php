@@ -15,11 +15,11 @@ class CreatOrderTable extends Migration
     {
         Schema::create('order', function (Blueprint $table) {
             $table->id();
-            $table->text('c_name');
-            $table->text('phone');
-            $table->text('itemName');
+            $table->text('itemName'); 
             $table->text('price');
             $table->integer('quantity');
+            $table->text('phone');        //customer phone number
+            $table->text('location');     //customer location
             $table->timestamps();
         });
     }

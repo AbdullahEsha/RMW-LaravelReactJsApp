@@ -15,6 +15,7 @@ const MenuCard = ({ menuData }) => {
                     src={"http://localhost:8000/" + curElem.img}
                     alt="images"
                     className="card-media"
+                    id="cardtop"
                   />
                   <div
                     className="card-body"
@@ -32,8 +33,13 @@ const MenuCard = ({ menuData }) => {
                         <h3 style={{ color: "#fff" }}>{curElem.price}</h3>
                       </Col>
                       <Col xs={6} md={6} align="right">
-                        <a href={"/order/" + curElem.id} id="odr">
-                          Order Now
+                        <a href={"/order/" + curElem.id}>
+                          <img
+                            src="https://www.svgrepo.com/show/46234/shopping-cart.svg"
+                            alt="cartImg"
+                            height={"40px"}
+                            id="cartIcon"
+                          />
                         </a>
                       </Col>
                     </Row>
