@@ -17,7 +17,7 @@ Route::get('/order/{id}', [MenuController::class, 'getMenuById']);
 // api from menu table end
 
 // api from order table
-Route::post('/order', [OrderController::class, 'store']);
+Route::post('/order/{id}', [OrderController::class, 'store']);
 Route::get('/admin/orders', [OrderController::class, 'getData']);
 // api from order table end
 
