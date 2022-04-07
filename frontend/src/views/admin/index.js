@@ -4,6 +4,7 @@ import "../../assets/css/style.css";
 import Footer from "../../Component/footer";
 import axios from "axios";
 import Swal from "sweetalert2";
+import AdminNav from "../../Component/adminNav";
 
 const FullMenu = () => {
   const [categories, setCategories] = useState([]);
@@ -32,6 +33,7 @@ const FullMenu = () => {
 
   return (
     <>
+      <AdminNav />
       <section className="menuBarCard">
         <Container>
           <table class="table table-responsive table-light">

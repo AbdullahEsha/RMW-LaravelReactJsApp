@@ -5,6 +5,7 @@ import "../../assets/css/style.css";
 import Footer from "../../Component/footer";
 import Swal from "sweetalert2";
 import axios from "axios";
+import AdminNav from "../../Component/adminNav";
 
 const FullMenu = () => {
   const history = useHistory();
@@ -56,8 +57,10 @@ const FullMenu = () => {
 
   return (
     <>
+      <AdminNav />
       <section className="menuBarCard">
         <Container>
+          <br />
           <br />
           <h1>
             <i>Upload Item</i>
@@ -135,6 +138,7 @@ const FullMenu = () => {
                 Upload
               </button>
             </div>
+            <br />
             <br />
           </Form>
         </Container>

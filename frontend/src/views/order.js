@@ -50,7 +50,7 @@ const Order = () => {
     formData.append("location", location);
 
     await axios
-      .post(`order`, formData)
+      .post(`order/` + id, formData)
       .then(({ data }) => {
         Swal.fire({
           icon: "success",
