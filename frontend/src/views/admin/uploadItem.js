@@ -56,7 +56,7 @@ const FullMenu = () => {
   return (
     <>
       <AdminNav />
-      <section className="menuBarCard">
+      <section className="menuBarCard" id="upload">
         <Container>
           <br />
           <br />

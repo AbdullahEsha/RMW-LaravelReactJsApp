@@ -16,10 +16,10 @@ const AdminNav = () => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ms-auto">
-              <Nav.Link href="/admin/index">All Item</Nav.Link>
-              <Nav.Link href="/admin/upload">Upload Item</Nav.Link>
-              <Nav.Link href="/admin/bookings">Bookings</Nav.Link>
-              <Nav.Link href="/admin/orders">Orders</Nav.Link>
+              <Nav.Link href="/admin/index#index">All Item</Nav.Link>
+              <Nav.Link href="/admin/upload#upload">Upload Item</Nav.Link>
+              <Nav.Link href="/admin/bookings#booking">Bookings</Nav.Link>
+              <Nav.Link href="/admin/orders#order">Orders</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
