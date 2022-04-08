@@ -18,10 +18,21 @@ const Index = () => {
 
   //get menu data using api start
   const GetMenu = () => {
-    axios.get("admin/index").then((response) => {
-      console.log(response.data);
-      setMenuData(response.data);
-    });
+    axios
+      .get("admin/index")
+      .then((response) => {
+        console.log(response.data);
+        setMenuData(response.data);
+      })
+      .catch(() => {
+        Swal.fire({
+          text: "DB couldn't be loaded!!!",
+          icon: "error",
+          timer: 100,
+        }).then(function () {
+          window.location = "/error";
+        });
+      });
   };
 
   //list for Menuber [...(menu[i].catagory) can be added.]
