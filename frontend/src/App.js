@@ -12,6 +12,7 @@ import Login from "./views/login";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Order from "./views/order";
 import Bookings from "./views/admin/bookings";
+import Orders from "./views/admin/orders";
 
 axios.defaults.baseURL = "http://127.0.0.1:8000/api/";
 
@@ -24,6 +25,7 @@ function App() {
       <Route path="/index" component={Index} />
       <Route path="/admin/index" component={FullMenu} />
       <Route path="/admin/bookings" component={Bookings} />
+      <Route path="/admin/orders" component={Orders} />
       <Route path="/admin/upload" component={Upload} />
       <Route path="/login" component={Login} />
       <Route path="/order/:id" component={Order} />

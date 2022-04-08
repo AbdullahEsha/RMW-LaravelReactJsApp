@@ -48,22 +48,22 @@ const FullMenu = () => {
               </tr>
             </thead>
             <tbody align="center">
-              {categories.map((c) => (
+              {categories.map((event) => (
                 <tr>
                   <td height={"70px"} width={"100px"}>
                     <img
-                      src={"http://localhost:8000/" + c.img}
+                      src={"http://localhost:8000/" + event.img}
                       height={"70px"}
                       width={"100px"}
                       alt="itemImg"
                     />
                   </td>
-                  <td>{c.name}</td>
-                  <td>{c.category}</td>
-                  <td>{c.price}</td>
+                  <td>{event.name}</td>
+                  <td>{event.category}</td>
+                  <td>{event.price}</td>
                   <td>
                     <textarea rows="3" cols="30" disabled>
-                      {c.description}
+                      {event.description}
                     </textarea>
                   </td>
                   <td>
@@ -82,6 +82,7 @@ const FullMenu = () => {
             </tbody>
           </table>
         </Container>
+        <br />
       </section>
       <Footer />
     </>

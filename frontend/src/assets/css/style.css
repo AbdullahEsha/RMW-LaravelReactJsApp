@@ -114,8 +114,7 @@ body {
   object-fit: cover;
 }
 
-.crdmrgin h3,
-h6 {
+* {
   text-transform: capitalize;
 }
 

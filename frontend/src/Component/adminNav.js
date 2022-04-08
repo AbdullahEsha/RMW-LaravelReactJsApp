@@ -19,6 +19,7 @@ const AdminNav = () => {
               <Nav.Link href="/admin/index">All Item</Nav.Link>
               <Nav.Link href="/admin/upload">Upload Item</Nav.Link>
               <Nav.Link href="/admin/bookings">Bookings</Nav.Link>
+              <Nav.Link href="/admin/orders">Orders</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>

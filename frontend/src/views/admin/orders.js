@@ -7,14 +7,14 @@ import Swal from "sweetalert2";
 import AdminNav from "../../Component/adminNav";
 
 const Orders = () => {
-  const [categories, setCategories] = useState([]);
+  const [orders, setOrders] = useState([]);
 
-  const AllCategoryList = () => {
+  const OrderList = () => {
     axios
       .get("admin/orders")
       .then((response) => {
         console.log(response.data);
-        setCategories(response.data);
+        setOrders(response.data);
       })
       .catch(() => {
         Swal.fire({
@@ -28,7 +28,7 @@ const Orders = () => {
   };
 
   useEffect(() => {
-    AllCategoryList();
+    OrderList();
   }, []);
 
   return (
@@ -39,39 +39,28 @@ const Orders = () => {
           <table class="table table-responsive table-light">
             <thead align="center">
               <tr>
-                <th scope="col">Image</th>
                 <th scope="col">Name</th>
-                <th scope="col">Category</th>
                 <th scope="col">Price</th>
-                <th scope="col">Description</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Location</th>
                 <th scope="col">Action</th>
               </tr>
             </thead>
             <tbody align="center">
-              {categories.map((c) => (
+              {orders.map((event) => (
                 <tr>
-                  <td height={"70px"} width={"100px"}>
-                    <img
-                      src={"http://localhost:8000/" + c.img}
-                      height={"70px"}
-                      width={"100px"}
-                      alt="itemImg"
-                    />
-                  </td>
-                  <td>{c.name}</td>
-                  <td>{c.category}</td>
-                  <td>{c.price}</td>
-                  <td>
-                    <textarea rows="3" cols="30" disabled>
-                      {c.description}
-                    </textarea>
-                  </td>
+                  <td>{event.itemName}</td>
+                  <td>{event.price}</td>
+                  <td>{event.quantity}</td>
+                  <td>{event.phone}</td>
+                  <td>{event.location}</td>
                   <td>
                     <button
                       type="button"
                       class="btn btn-outline-primary btn-sm"
                     >
-                      Update
+                      Accept
                     </button>{" "}
                     <button type="button" class="btn btn-outline-danger btn-sm">
                       Delete
@@ -82,6 +71,7 @@ const Orders = () => {
             </tbody>
           </table>
         </Container>
+        <br />
       </section>
       <Footer />
     </>

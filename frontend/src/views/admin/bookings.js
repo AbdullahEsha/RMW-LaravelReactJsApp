@@ -71,6 +71,7 @@ const Bookings = () => {
             </tbody>
           </table>
         </Container>
+        <br />
       </section>
       <Footer />
     </>
