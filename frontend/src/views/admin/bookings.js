@@ -34,7 +34,7 @@ const Bookings = () => {
   return (
     <>
       <AdminNav />
-      <section className="menuBarCard">
+      <section className="menuBarCard" id="booking">
         <Container>
           <table class="table table-responsive table-light">
             <thead align="center">

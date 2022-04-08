@@ -34,7 +34,7 @@ const FullMenu = () => {
   return (
     <>
       <AdminNav />
-      <section className="menuBarCard">
+      <section className="menuBarCard" id="index">
         <Container>
           <table class="table table-responsive table-light">
             <thead align="center">
