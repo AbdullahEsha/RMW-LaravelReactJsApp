@@ -9,12 +9,14 @@ import "../assets/css/style.css";
 import ImgMid1 from "../assets/images/o1.jpg";
 import ImgMid2 from "../assets/images/o2.jpg";
 import ImgBnr from "../assets/images/aboutImg.png";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Form } from "react-bootstrap";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 const Index = () => {
   const history = useHistory();
 
+  //get menu data using api start
   const GetMenu = () => {
     axios.get("admin/index").then((response) => {
       console.log(response.data);
@@ -22,6 +24,7 @@ const Index = () => {
     });
   };
 
+  //list for Menuber [...(menu[i].catagory) can be added.]
   const uniqueList = ["breakfast", "lunch", "supper", "dinner", "All"];
 
   const [menuData, setMenuData] = useState([]);
@@ -29,6 +32,7 @@ const Index = () => {
 
   console.log(setMenuList);
 
+  //filter function for menu
   const filterItem = (category) => {
     if (category === "All") {
       setMenuData(menuData);
@@ -45,6 +49,51 @@ const Index = () => {
   useEffect(() => {
     GetMenu();
   }, []);
+  //get menu data using api end
+
+  //post booking using api start
+  const [c_name, setCName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
+  const [b_date, setBDate] = useState("");
+  const [n_person, setNPerson] = useState("");
+  const [validationError, setValidationError] = useState({});
+
+  console.log(validationError);
+
+  const addBooking = async (event) => {
+    event.preventDefault();
+
+    const formData = new FormData();
+
+    formData.append("c_name", c_name);
+    formData.append("phone", phone);
+    formData.append("email", email);
+    formData.append("b_date", b_date);
+    formData.append("n_person", n_person);
+
+    await axios
+      .post(`index`, formData)
+      .then(({ data }) => {
+        Swal.fire({
+          icon: "success",
+          text: data.message,
+        }).then(function () {
+          window.location = "http://localhost:3000";
+        });
+      })
+      .catch(({ response }) => {
+        if (response.status === 422) {
+          setValidationError(response.data.errors);
+        } else {
+          Swal.fire({
+            icon: "error",
+            text: response.data.message,
+          });
+        }
+      });
+  };
+  //post booking using api end
 
   return (
     <>
@@ -191,65 +240,97 @@ const Index = () => {
         <Container>
           <Row>
             <Col xs={12} md={6}>
-              <br />
-              <h1>
-                <i>Book A Table</i>
-              </h1>
-              <br />
-              <div className="form-group">
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Name"
-                  name="Name"
-                  aria-describedby="inputGroupFileAddon04"
-                  aria-label="Upload"
-                />
-              </div>
-              <br />
-              <div className="form-group">
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Phone Number"
-                  name="phone"
-                  aria-describedby="inputGroupFileAddon04"
-                  aria-label="Upload"
-                />
-              </div>
-              <br />
-              <div className="form-group">
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Email"
-                  name="email"
-                  aria-describedby="inputGroupFileAddon04"
-                  aria-label="Upload"
-                />
-              </div>
-              <br />
-              <div className="form-group">
-                <input
-                  type="date"
-                  className="form-control"
-                  id="inputGroupFile04"
-                  aria-describedby="inputGroupFileAddon04"
-                  aria-label="Upload"
-                />
-              </div>
-              <br />
-              <div className="form-group">
-                <select className="form-control nice-select wide">
-                  <option value="" disabled selected>
-                    How many persons?
-                  </option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                </select>
-              </div>
+              <Form onSubmit={addBooking}>
+                <br />
+                <h1>
+                  <i>Book A Table</i>
+                </h1>
+                <br />
+                <div className="form-group">
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Name"
+                    name="c_name"
+                    value={c_name}
+                    onChange={(event) => {
+                      setCName(event.target.value);
+                    }}
+                    required
+                  />
+                </div>
+                <br />
+                <div className="form-group">
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Phone Number"
+                    name="phone"
+                    value={phone}
+                    onChange={(event) => {
+                      setPhone(event.target.value);
+                    }}
+                    required
+                  />
+                </div>
+                <br />
+                <div className="form-group">
+                  <input
+                    type="email"
+                    className="form-control"
+                    placeholder="Email"
+                    name="email"
+                    value={email}
+                    onChange={(event) => {
+                      setEmail(event.target.value);
+                    }}
+                    required
+                  />
+                </div>
+                <br />
+                <div className="form-group">
+                  <input
+                    type="date"
+                    className="form-control"
+                    name="b_date"
+                    value={b_date}
+                    onChange={(event) => {
+                      setBDate(event.target.value);
+                    }}
+                    required
+                  />
+                </div>
+                <br />
+                <div className="form-group">
+                  <select
+                    className="form-control"
+                    name="n_person"
+                    value={n_person}
+                    onChange={(event) => {
+                      setNPerson(event.target.value);
+                    }}
+                    required
+                  >
+                    <option value="" disabled selected>
+                      How many persons?
+                    </option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+                </div>
+                <br />
+                <div class="form-group" align="right">
+                  <button
+                    type="submit"
+                    name="submit"
+                    class="btn btn-outline-primary"
+                  >
+                    Book
+                  </button>
+                </div>
+              </Form>
             </Col>
             <Col xs={12} md={6}>
               <br />
@@ -263,7 +344,7 @@ const Index = () => {
                     width="500"
                     height="300"
                     id="gmap_canvas"
-                    src="https://maps.google.com/maps?q=Dhaka,%20Bangladesh&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                    src="https://maps.google.com/maps?q=taltola,%20khilgaon,%20Dhaka,%20Bangladesh&t=&z=13&ie=UTF8&iwloc=&output=embed"
                     frameborder="0"
                     scrolling="no"
                     marginheight="0"
