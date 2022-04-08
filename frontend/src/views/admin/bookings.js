@@ -22,7 +22,7 @@ const Bookings = () => {
           icon: "error",
           timer: 100,
         }).then(function () {
-          window.location = "http://localhost:3000";
+          window.location = "/error";
         });
       });
   };

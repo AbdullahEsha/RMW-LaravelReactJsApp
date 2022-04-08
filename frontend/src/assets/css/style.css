@@ -118,15 +118,6 @@ body {
   text-transform: capitalize;
 }
 
-/* @media screen and (max-width: 1000px) {
-  #containImg {
-    width: 305px;
-  }
-  .crdmrgin img {
-    height: 200px;
-  }
-} */
-
 .card-read {
   cursor: pointer;
   font-size: 14px;
@@ -331,6 +322,12 @@ h3 {
 #restur {
   text-decoration: none;
   color: #fff;
+}
+
+.erclr {
+  background-color: rgba(255, 255, 255, 0.541);
+  padding: 20px;
+  width: 70%;
 }
 
 @media (max-width: 998px) {

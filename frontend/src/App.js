@@ -13,6 +13,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Order from "./views/order";
 import Bookings from "./views/admin/bookings";
 import Orders from "./views/admin/orders";
+import Error from "./Component/error";
 
 axios.defaults.baseURL = "http://127.0.0.1:8000/api/";
 
@@ -23,6 +24,7 @@ function App() {
       <Route path="/useEffect" component={UseEffect} />
       <Route path="/useReducer" component={UseReducer} />
       <Route path="/index" component={Index} />
+      <Route path="/error" component={Error} />
       <Route path="/admin/index" component={FullMenu} />
       <Route path="/admin/bookings" component={Bookings} />
       <Route path="/admin/orders" component={Orders} />
