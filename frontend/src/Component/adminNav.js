@@ -18,6 +18,7 @@ const AdminNav = () => {
             <Nav className="ms-auto">
               <Nav.Link href="/admin/index">All Item</Nav.Link>
               <Nav.Link href="/admin/upload">Upload Item</Nav.Link>
+              <Nav.Link href="/admin/bookings">Bookings</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
