@@ -11,7 +11,7 @@ const Orders = () => {
 
   const AllCategoryList = () => {
     axios
-      .get("admin/index")
+      .get("admin/orders")
       .then((response) => {
         console.log(response.data);
         setCategories(response.data);

@@ -7,14 +7,14 @@ import Swal from "sweetalert2";
 import AdminNav from "../../Component/adminNav";
 
 const Bookings = () => {
-  const [categories, setCategories] = useState([]);
+  const [bookings, setBookings] = useState([]);
 
-  const AllCategoryList = () => {
+  const BookingList = () => {
     axios
-      .get("admin/index")
+      .get("admin/bookings")
       .then((response) => {
         console.log(response.data);
-        setCategories(response.data);
+        setBookings(response.data);
       })
       .catch(() => {
         Swal.fire({
@@ -28,7 +28,7 @@ const Bookings = () => {
   };
 
   useEffect(() => {
-    AllCategoryList();
+    BookingList();
   }, []);
 
   return (
@@ -39,40 +39,29 @@ const Bookings = () => {
           <table class="table table-responsive table-light">
             <thead align="center">
               <tr>
-                <th scope="col">Image</th>
                 <th scope="col">Name</th>
-                <th scope="col">Category</th>
-                <th scope="col">Price</th>
-                <th scope="col">Description</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Email</th>
+                <th scope="col">Booking Date</th>
+                <th scope="col">Persons</th>
                 <th scope="col">Action</th>
               </tr>
             </thead>
             <tbody align="center">
-              {categories.map((c) => (
+              {bookings.map((event) => (
                 <tr>
-                  <td height={"70px"} width={"100px"}>
-                    <img
-                      src={"http://localhost:8000/" + c.img}
-                      height={"70px"}
-                      width={"100px"}
-                      alt="itemImg"
-                    />
-                  </td>
-                  <td>{c.name}</td>
-                  <td>{c.category}</td>
-                  <td>{c.price}</td>
+                  <td>{event.c_name}</td>
+                  <td>{event.phone}</td>
+                  <td>{event.email}</td>
+                  <td>{event.b_date}</td>
+                  <td>{event.n_person}</td>
                   <td>
-                    <textarea rows="3" cols="30" disabled>
-                      {c.description}
-                    </textarea>
-                  </td>
-                  <td>
-                    <button
-                      type="button"
+                    <a
+                      href={"mailto:" + event.email}
                       class="btn btn-outline-primary btn-sm"
                     >
-                      Update
-                    </button>{" "}
+                      Accept
+                    </a>{" "}
                     <button type="button" class="btn btn-outline-danger btn-sm">
                       Delete
                     </button>
