@@ -8,4 +8,18 @@ use Illuminate\Database\Eloquent\Model;
 class Booking extends Model
 {
     use HasFactory;
+
+    protected $table = 'booking';
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string> 
+     */
+    protected $fillable = [
+        'c_name',
+        'phone',
+        'email',
+        'b_date',
+        'n_person',
+    ];
 }

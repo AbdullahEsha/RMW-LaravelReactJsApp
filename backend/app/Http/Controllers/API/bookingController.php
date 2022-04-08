@@ -22,17 +22,17 @@ class bookingController extends Controller
 
     public function store(Request $req){
         $booking = new Booking;
-        try { 
-            $booking->itemName = $req->itemName;
-            $booking->price = $req->price;
-            $booking->quantity = $req->quantity;
+        try {
+            $booking->c_name = $req->c_name;
             $booking->phone = $req->phone;
-            $booking->location = $req->location;
+            $booking->email = $req->email;
+            $booking->b_date = $req->b_date;
+            $booking->n_person = $req->n_person;
 
             $booking->save();
 
             return  response()-> json([
-                "message" => 'Order is placed. Please wait for 30 minutes...',
+                "message" => 'Booking is placed. Please, wait for the confirmation through email...',
             ]);
         }catch (\Exception $e) {
             return  response()-> json([

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Container, Form } from "react-bootstrap";
-import { useHistory } from "react-router-dom";
 import "../../assets/css/style.css";
 import Footer from "../../Component/footer";
 import Swal from "sweetalert2";
@@ -8,8 +7,6 @@ import axios from "axios";
 import AdminNav from "../../Component/adminNav";
 
 const FullMenu = () => {
-  const history = useHistory();
-
   const [name, setName] = useState("");
   const [category, setCategory] = useState("");
   const [price, setPrice] = useState("");
@@ -40,8 +37,9 @@ const FullMenu = () => {
         Swal.fire({
           icon: "success",
           text: data.message,
+        }).then(function () {
+          window.location = "http://localhost:3000";
         });
-        history.push("/");
       })
       .catch(({ response }) => {
         if (response.status === 422) {
